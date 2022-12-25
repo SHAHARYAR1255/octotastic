@@ -1,18 +1,15 @@
 import { ORDER_SUCCESS, GET_ORDERS_SUCCESS } from '@/constants/constants'
 
-// const initState = {}
+const initState = {
+  orderedItems: [],
+}
 
-export default (
-  state = {
-    orderedItems: [],
-  },
-  action,
-) => {
+export default (state = initState, action) => {
   switch (action.type) {
     case GET_ORDERS_SUCCESS:
       return {
         ...state,
-        orderedItems: action.payload.orderedItems,
+        orderedItems: action.payload,
       }
     case ORDER_SUCCESS:
       return {

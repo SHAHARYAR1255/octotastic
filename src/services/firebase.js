@@ -266,17 +266,18 @@ class Firebase {
   order = (orderPayload) => this.db.collection('orders').doc().set(orderPayload)
 
   getOrders = async (id) => {
-    const citiesRef = db.collection('orders')
+    const citiesRef = this.db.collection('orders')
     const snapshot = await citiesRef.where('id', '==', id).get()
     if (snapshot.empty) {
       console.log('No matching documents.')
-      return
+      return []
     }
-
+    let res =[];
     snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data())
+      console.log(doc.id, '=>', doc.data());
+      res = [...res , doc.data()]
     })
-    index.js
+    return res
   }
 }
 
