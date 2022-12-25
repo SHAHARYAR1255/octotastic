@@ -267,7 +267,7 @@ class Firebase {
 
   getOrders = async (id) => {
     const citiesRef = this.db.collection('orders')
-    const snapshot = await citiesRef.where('id', '==', id).get()
+    const snapshot = await citiesRef.where('authId', '==', id).get()
     if (snapshot.empty) {
       console.log('No matching documents.')
       return []

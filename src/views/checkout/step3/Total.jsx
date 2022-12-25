@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { setPaymentDetails } from '@/redux/actions/checkoutActions'
 import { order } from '@/redux/actions/orderActions'
+import { v4 as uuid } from 'uuid'
 
 const Total = ({ isInternational, subtotal }) => {
   const { values } = useFormikContext()
@@ -30,7 +31,8 @@ const Total = ({ isInternational, subtotal }) => {
     // console.log(basket, checkout, shipping, payment, subtotal)
     const { selectedSize, quantity, id, name, brand } = basket[0]
     const orderPayload = {
-      id: auth.id,
+      orderId: uuid().slice(0, 8),
+      authId: auth.id,
       subtotal,
       checkout: checkout.shipping,
       item: {
@@ -39,9 +41,9 @@ const Total = ({ isInternational, subtotal }) => {
         id,
         name,
         brand,
-        date: new Date().getDate(),
-        time: new Date().getTime(),
       },
+      date: new Date().getDate(),
+      time: new Date().getTime(),
     }
     console.log(orderPayload)
     console.log('onConfirm')

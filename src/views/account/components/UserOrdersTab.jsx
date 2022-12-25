@@ -37,14 +37,14 @@ const UserOrdersTab = () => {
       {orders.orderedItems.length !== 0 ? (
         orders.orderedItems.map(({ item }) => {
           console.log(item)
-          const { selectedSize, quantity, id, name, brand } = item
+          const { selectedSize, quantity, orderId, name, brand } = item
           return (
-            <Boundary key={id}>
+            <Boundary key={orderId}>
               <p>{selectedSize}</p>
               <p>{quantity}</p>
               <p>{name}</p>
               <p>{brand}</p>
-              <p>{id}</p>
+              <p>{orderId}</p>
               <p>{item.date}</p>
               <p>{item.time}</p>
               <OrderList {...orderStore}>
