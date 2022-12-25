@@ -63,3 +63,12 @@ export const EDIT_USER = 'EDIT_USER';
 export const LOADING = 'LOADING';
 export const IS_AUTHENTICATING = 'IS_AUTHENTICATING';
 export const SET_REQUEST_STATUS = 'SET_REQUEST_STATUS';
+
+
+
+export const ORDER = 'ORDER';
+export const ORDER_SUCCESS = 'ORDER_SUCCESS';
+export const GET_ORDERS = 'GET_ORDERS';
+export const GET_ORDERS_SUCCESS = 'GET_ORDERS_SUCCESS';
+// export const EDIT_ORDER = 'EDIT_ORDER';
+// export const EDIT_ORDER_SUCCESS = 'EDIT_ORDER_SUCCESS';

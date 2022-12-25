@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 import { StepTracker } from '../components';
 import withCheckout from '../hoc/withCheckout';
-import CreditPayment from './CreditPayment';
+// import CreditPayment from './CreditPayment';
 import PayPalPayment from './PayPalPayment';
 import Total from './Total';
 
@@ -55,16 +55,16 @@ const Payment = ({ shipping, payment, subtotal }) => {
         initialValues={initFormikValues}
         validateOnChange
         validationSchema={FormSchema}
-        validate={(form) => {
-          if (form.type === 'paypal') {
-            displayActionMessage('Feature not ready yet :)', 'info');
-          }
-        }}
+        // validate={(form) => {
+        //   if (form.type === 'paypal') {
+        //     displayActionMessage('Feature not ready yet :)', 'info');
+        //   }
+        // }}
         onSubmit={onConfirm}
       >
         {() => (
           <Form className="checkout-step-3">
-            <CreditPayment />
+            {/* <CreditPayment /> */}
             <PayPalPayment />
             <Total
               isInternational={shipping.isInternational}
@@ -77,19 +77,19 @@ const Payment = ({ shipping, payment, subtotal }) => {
   );
 };
 
-Payment.propTypes = {
-  shipping: PropType.shape({
-    isDone: PropType.bool,
-    isInternational: PropType.bool
-  }).isRequired,
-  payment: PropType.shape({
-    name: PropType.string,
-    cardnumber: PropType.string,
-    expiry: PropType.string,
-    ccv: PropType.string,
-    type: PropType.string
-  }).isRequired,
-  subtotal: PropType.number.isRequired
-};
+// Payment.propTypes = {
+//   shipping: PropType.shape({
+//     isDone: PropType.bool,
+//     isInternational: PropType.bool
+//   }).isRequired,
+//   payment: PropType.shape({
+//     name: PropType.string,
+//     cardnumber: PropType.string,
+//     expiry: PropType.string,
+//     ccv: PropType.string,
+//     type: PropType.string
+//   }).isRequired,
+//   subtotal: PropType.number.isRequired
+// };
 
 export default withCheckout(Payment);
