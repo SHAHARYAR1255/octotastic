@@ -65,7 +65,7 @@ const Navigation = (props) => {
         </ul>
       </div>
       <div className="mobile-navigation-sec">
-        <SearchBar />
+        {/* <SearchBar /> */}
         <FiltersToggle>
           <button className="button-link button-small" type="button">
             <i className="fa fa-filter" />

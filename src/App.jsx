@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 // import { PersistGate } from 'redux-persist/integration/react';
 import AppRouter from '@/routers/AppRouter';
 
-const App = ({ store, persistor }) => (
+const App = ({ store }) => (
   <StrictMode>
     <Provider store={store}>
       {/* <PersistGate loading={<Preloader />} persistor={persistor}> */}

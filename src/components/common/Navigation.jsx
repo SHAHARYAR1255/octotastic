@@ -85,7 +85,7 @@ const Navigation = () => {
           </button>
         </FiltersToggle>
       )}
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ul className="navigation-menu">
         <li className="navigation-menu-item">
           <BasketToggle>
