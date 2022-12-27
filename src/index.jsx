@@ -12,7 +12,7 @@ import firebase from '@/services/firebase';
 
 WebFont.load({
   google: {
-    families: ['Tajawal']
+    families: ['Rubik 80s Fade']
   }
 });
 
