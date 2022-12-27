@@ -40,7 +40,7 @@ function* profileSaga({ type, payload }) {
           const bannerURL = bannerFile ? yield call(firebase.storeImage, state.auth.id, 'banner', bannerFile) : payload.updates.banner;
           const avatarURL = avatarFile ? yield call(firebase.storeImage, state.auth.id, 'avatar', avatarFile) : payload.updates.avatar;
           const updates = { ...payload.updates, avatar: avatarURL, banner: bannerURL };
-
+          console.log(updates, "updates");
           yield call(firebase.updateProfile, state.auth.id, updates);
           yield put(updateProfileSuccess(updates));
         } else {

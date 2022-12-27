@@ -250,10 +250,13 @@ class Firebase {
   generateKey = () => this.db.collection('products').doc().id
 
   storeImage = async (id, folder, imageFile) => {
-    const snapshot = await this.storage.ref(folder).child(id).put(imageFile)
-    const downloadURL = await snapshot.ref.getDownloadURL()
+    const snapshot = this.storage.refFromURL(
+      'gs://octotastic-8653e.appspot.com',
+    )
+    const Ref = await snapshot.child(`${folder}/${id}`).put(imageFile);
+    const downloadURL = await Ref.ref.getDownloadURL();
 
-    return downloadURL
+    return downloadURL;
   }
 
   deleteImage = (id) => this.storage.ref('products').child(id).delete()
@@ -272,10 +275,10 @@ class Firebase {
       console.log('No matching documents.')
       return []
     }
-    let res =[];
+    let res = []
     snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data());
-      res = [...res , doc.data()]
+      console.log(doc.id, '=>', doc.data())
+      res = [...res, doc.data()]
     })
     return res
   }
