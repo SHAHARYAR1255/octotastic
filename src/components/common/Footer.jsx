@@ -21,8 +21,9 @@ const Footer = () => {
       <ul className='permalinks'>
         <li><a href={Route.HOME}>Home</a></li>
         <li><a href={Route.SHOP}>Shop</a></li>
-        <li><a href={Route.FEATURED_PRODUCTS}>Featured</a></li>
-        <li><a href={Route.RECOMMENDED_PRODUCTS}>Recommended</a></li>
+        <li><a href={Route.TERMS}>Terms & Conditions</a></li>
+        <li><a href={Route.PRIVACYPOLICY}>Privacy Policy</a></li>
+        <li><a href={Route.RECOMMENDED_PRODUCTS}>About Us</a></li>
         <li><a href={Route.CONTACT}>Contact</a></li>
       </ul>
 
@@ -32,7 +33,7 @@ const Footer = () => {
         <a href="#"><TwitterOutlined /></a>
       </div>
       <div className="footer__copyright">
-        <small>&copy; Copyright © 2018 -2022 Octotastic, Inc. All rights reserved.</small>
+        <small>Copyright &copy; 2018 -2022 Octotastic, Inc. All rights reserved.</small>
       </div>
     </footer>
   );
