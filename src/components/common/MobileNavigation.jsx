@@ -80,10 +80,10 @@ Navigation.propTypes = {
   isAuthenticating: PropType.bool.isRequired,
   basketLength: PropType.number.isRequired,
   disabledPaths: PropType.arrayOf(PropType.string).isRequired,
-  user: PropType.oneOfType([
-    PropType.bool,
-    PropType.object
-  ]).isRequired
+  // user: PropType.oneOfType([
+  //   PropType.bool,
+  //   PropType.object
+  // ]).isRequired
 };
 
 export default Navigation;
