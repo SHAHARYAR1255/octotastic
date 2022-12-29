@@ -7,13 +7,13 @@ import { Provider } from 'react-redux';
 import AppRouter from '@/routers/AppRouter';
 
 const App = ({ store }) => (
-  <StrictMode>
+  // <StrictMode>
     <Provider store={store}>
       {/* <PersistGate loading={<Preloader />} persistor={persistor}> */}
         <AppRouter />
       {/* </PersistGate> */}
     </Provider>
-  </StrictMode>
+  // </StrictMode>
 );
 
 App.propTypes = {

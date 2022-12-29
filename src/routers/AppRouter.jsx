@@ -57,19 +57,19 @@ const AppRouter = () => (
           component={view.ForgotPassword}
           path={ROUTES.FORGOT_PASSWORD}
         />
-        <PublicRoute
+        <Route
           component={view.Terms}
           path={ROUTES.TERMS}
         />
-         <PublicRoute
+         <Route
           component={view.Aboutus}
           path={ROUTES.ABOUTUS}
         />
-         <PublicRoute
+         <Route
           component={view.PrivacyPolicy}
           path={ROUTES.PRIVACYPOLICY}
         />
-        <PublicRoute
+        <Route
           component={view.Contact}
           path={ROUTES.CONTACT}
         />

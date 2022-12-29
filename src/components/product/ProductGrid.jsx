@@ -2,6 +2,7 @@ import { useBasket } from '@/hooks';
 import PropType from 'prop-types';
 import React from 'react';
 import ProductItem from './ProductItem';
+import { v4 as uuid } from 'uuid'
 
 const ProductGrid = ({ products }) => {
   const { addToBasket, isItemOnBasket } = useBasket();
@@ -16,7 +17,7 @@ const ProductGrid = ({ products }) => {
         />
       )) : products.map((product) => (
         <ProductItem
-          key={product.id}
+          key={uuid().slice(0, 8)}
           isItemOnBasket={isItemOnBasket}
           addToBasket={addToBasket}
           product={product}
