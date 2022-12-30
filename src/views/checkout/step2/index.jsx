@@ -49,7 +49,7 @@ const ShippingDetails = ({ profile, shipping, subtotal }) => {
     email: shipping.email || profile.email || '',
     address: shipping.address || profile.address || '',
     mobile: shipping.mobile || profile.mobile || {},
-    isInternational: shipping.isInternational || false,
+    isInternational: true,
     isDone: shipping.isDone || false
   };
 
