@@ -15,13 +15,12 @@ const withCheckout = (Component) =>
       profile: store.profile,
     }))
 
-    const shippingFee = state.shipping.isInternational ? 199 : 0
-    const subtotal =
-      Number(
-        calculateTotal(
-          state.basket.map((product) => product.price * product.quantity),
-        ),
-      ) + Number(shippingFee)
+    // const shippingFee = state.shipping.isInternational ? 199 : 0
+    const subtotal = Number(
+      calculateTotal(
+        state.basket.map((product) => product.price * product.quantity),
+      ),
+    )
     if (!state.isAuth) {
       return <Redirect to={SIGNIN} />
     }

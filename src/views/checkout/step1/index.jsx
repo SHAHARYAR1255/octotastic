@@ -56,7 +56,7 @@ const OrderSummary = ({ basket, subtotal }) => {
             onClick={onClickNext}
             type="submit"
           >
-            
+
             Next Step
             &nbsp;
             <ArrowRightOutlined />

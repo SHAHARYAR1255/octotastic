@@ -107,10 +107,10 @@ class Firebase {
   getProducts = async (a) => {
     console.log('sdsadfa')
     const productRef = this.db.collection('products')
-    const snapshot = await productRef.get();
+    const snapshot = await productRef.get()
     const products = []
     snapshot.forEach((doc) => {
-      products.push(doc.data());
+      products.push(doc.data())
     })
     console.log(products)
     return products
@@ -281,7 +281,10 @@ class Firebase {
 
   getOrders = async (id) => {
     const citiesRef = this.db.collection('orders')
-    const snapshot = await citiesRef.where('authId', '==', id).get()
+    const snap = citiesRef
+      .orderBy('time', 'desc')
+      .where('authId', '==', id)
+    const snapshot = await snap.get()
     if (snapshot.empty) {
       console.log('No matching documents.')
       return []

@@ -78,11 +78,6 @@ footer {
 }
 
 
-footer a, h2 {
-  color: #ffffff;
-  font-weight: 700;
-}
-
 .footer__logo {
   font-size: 1.5rem;
   font-weight: 500;
@@ -91,7 +86,11 @@ footer a, h2 {
   display: inline-block;
   color: #ffffff;
 }
-
+.permalinks a , h2{
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #000;
+}
 .permalinks {
   display: flex;
   flex-wrap: wrap;

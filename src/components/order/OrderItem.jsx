@@ -73,7 +73,7 @@ export const OrderItem = ({ order }) => {
           </div>
           <div className="grid-col">
             <span>
-              {order.date ? displayDate(order.date) : <Skeleton width={30} />}
+              {order.date ? displayDate(order.time) : <Skeleton width={30} />}
             </span>
           </div>
           <div className="grid-col">

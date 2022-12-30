@@ -33,7 +33,7 @@ const Total = ({ isInternational, subtotal }) => {
     const orderPayload = {
       orderId: uuid().slice(0, 8),
       authId: auth.id,
-      subtotal,
+      subtotal: subtotal + 199,
       checkout: checkout.shipping,
       item: {
         selectedSize,
@@ -56,9 +56,7 @@ const Total = ({ isInternational, subtotal }) => {
     <>
       <div className="basket-total text-right">
         <p className="basket-total-title">Total:</p>
-        <h3 className="basket-total-amount">
-          {displayMoney(subtotal)}
-        </h3>
+        <h3 className="basket-total-amount">{displayMoney(subtotal + 199)}</h3>
       </div>
       <br />
       <div className="checkout-shipping-action">
