@@ -4,6 +4,7 @@ import React, { lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addProduct } from '@/redux/actions/productActions';
+import { v4 as uuid } from 'uuid'
 
 const ProductForm = lazy(() => import('../components/ProductForm'));
 
@@ -32,6 +33,7 @@ const AddProduct = () => {
           isLoading={isLoading}
           onSubmit={onSubmit}
           product={{
+            id: uuid().slice(0, 8),
             name: '',
             brand: '',
             price: 0,
