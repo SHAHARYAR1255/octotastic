@@ -38,7 +38,7 @@ const OrderSummary = ({ basket, subtotal }) => {
         <br />
         <div className="basket-total text-right">
           <p className="basket-total-title">Subtotal:</p>
-          <h2 className="basket-total-amount">{displayMoney(subtotal)}</h2>
+          <h3 className="basket-total-amount">{displayMoney(subtotal)}</h3>
         </div>
         <br />
         <div className="checkout-shipping-action">
@@ -56,6 +56,7 @@ const OrderSummary = ({ basket, subtotal }) => {
             onClick={onClickNext}
             type="submit"
           >
+            
             Next Step
             &nbsp;
             <ArrowRightOutlined />

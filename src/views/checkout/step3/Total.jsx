@@ -56,9 +56,9 @@ const Total = ({ isInternational, subtotal }) => {
     <>
       <div className="basket-total text-right">
         <p className="basket-total-title">Total:</p>
-        <h2 className="basket-total-amount">
-          {displayMoney(subtotal + (isInternational ? 200 : 0))}
-        </h2>
+        <h3 className="basket-total-amount">
+          {displayMoney(subtotal)}
+        </h3>
       </div>
       <br />
       <div className="checkout-shipping-action">
