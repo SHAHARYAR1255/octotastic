@@ -1,8 +1,12 @@
 import React from 'react'
+import { useDocumentTitle, useScrollTop } from '@/hooks';
 
-function Terms() {
+const Terms = () => {
+  useDocumentTitle('Terms & Conditions | Octotastic')
+  useScrollTop()
+
   return (
-    <div>
+    <div className=''>
       <h2>TERMS AND CONDITIONS</h2>
       <p>
         Once an order is placed, it is validated and forwarded to the processing

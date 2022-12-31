@@ -1,6 +1,9 @@
 import React from 'react'
+import { useDocumentTitle, useScrollTop } from '@/hooks'
 
 function PrivacyPolicy() {
+  useDocumentTitle('Privacy Policy | Octotastic')
+  useScrollTop()
   return (
     <div>
       <h1>PRIVACY POLICY</h1>

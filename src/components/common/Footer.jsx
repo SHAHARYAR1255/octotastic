@@ -1,7 +1,7 @@
 import * as Route from '@/constants/routes'
 import logo from '@/images/logo-full.png'
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link} from 'react-router-dom'
 import {
   FacebookFilled,
   InstagramOutlined,
@@ -16,41 +16,41 @@ const Footer = () => {
   // return !visibleOnlyPath.includes(pathname) ? null : (
   return (
     <footer>
-      <a href="#" className="">
-        <h2>OCTOTASTIC</h2>
-      </a>
+      <Link to="/">
+        <h2 className="footer__h2">OCTOTASTIC</h2>
+      </Link>
 
       <ul className="permalinks">
         <li>
-          <a href={Route.HOME}>Home</a>
+          <Link to={Route.HOME}>Home</Link>
         </li>
         <li>
-          <a href={Route.SHOP}>Shop</a>
+          <Link to={Route.SHOP}>Shop</Link>
         </li>
         <li>
-          <a href={Route.CONTACT}>Contact</a>
+          <Link to={Route.CONTACT}>Contact</Link>
         </li>
         <li>
-          <a href={Route.RECOMMENDED_PRODUCTS}>About Us</a>
+          <Link to={Route.RECOMMENDED_PRODUCTS}>About Us</Link>
         </li>
         <li>
-          <a href={Route.PRIVACYPOLICY}>Privacy Policy</a>
+          <Link to={Route.PRIVACYPOLICY}>Privacy Policy</Link>
         </li>
         <li>
-          <a href={Route.TERMS}>Terms & Conditions</a>
+          <Link to={Route.TERMS}>Terms & Conditions</Link>
         </li>
       </ul>
 
       <div className="footer__socials">
-        <a href="#">
+        <Link to="#">
           <FacebookFilled />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="#">
           <InstagramOutlined />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="#">
           <TwitterOutlined />
-        </a>
+        </Link>
       </div>
       <div className="footer__copyright">
         <small>
