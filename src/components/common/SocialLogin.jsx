@@ -1,36 +1,44 @@
-import { FacebookOutlined, GithubFilled, GoogleOutlined } from '@ant-design/icons';
-import PropType from 'prop-types';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { signInWithFacebook, signInWithGithub, signInWithGoogle } from '@/redux/actions/authActions';
+import {
+  FacebookOutlined,
+  GithubFilled,
+  GoogleOutlined,
+} from '@ant-design/icons'
+import PropType from 'prop-types'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import {
+  signInWithFacebook,
+  signInWithGithub,
+  signInWithGoogle,
+} from '@/redux/actions/authActions'
 
 const SocialLogin = ({ isLoading }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const onSignInWithGoogle = () => {
-    dispatch(signInWithGoogle());
-  };
+    dispatch(signInWithGoogle())
+  }
 
-  const onSignInWithFacebook = () => {
-    dispatch(signInWithFacebook());
-  };
+  // const onSignInWithFacebook = () => {
+  //   dispatch(signInWithFacebook());
+  // };
 
-  const onSignInWithGithub = () => {
-    dispatch(signInWithGithub());
-  };
+  // const onSignInWithGithub = () => {
+  //   dispatch(signInWithGithub());
+  // };
 
   return (
     <div className="auth-provider">
-      <button
+      {/* <button
         className="button auth-provider-button provider-facebook"
         disabled={isLoading}
         onClick={onSignInWithFacebook}
         type="button"
       >
-        {/* <i className="fab fa-facebook" /> */}
+        
         <FacebookOutlined />
         Continue with Facebook
-      </button>
+      </button> */}
       <button
         className="button auth-provider-button provider-google"
         disabled={isLoading}
@@ -40,7 +48,7 @@ const SocialLogin = ({ isLoading }) => {
         <GoogleOutlined />
         Continue with Google
       </button>
-      <button
+      {/* <button
         className="button auth-provider-button provider-github"
         disabled={isLoading}
         onClick={onSignInWithGithub}
@@ -48,13 +56,13 @@ const SocialLogin = ({ isLoading }) => {
       >
         <GithubFilled />
         Continue with GitHub
-      </button>
+      </button> */}
     </div>
-  );
-};
+  )
+}
 
 SocialLogin.propTypes = {
-  isLoading: PropType.bool.isRequired
-};
+  isLoading: PropType.bool.isRequired,
+}
 
-export default SocialLogin;
+export default SocialLogin
