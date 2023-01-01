@@ -1,4 +1,9 @@
-import { ArrowLeftOutlined, CheckOutlined } from '@ant-design/icons'
+import {
+  ArrowRightOutlined,
+  LoadingOutlined,
+  ArrowLeftOutlined,
+  CheckOutlined,
+} from '@ant-design/icons'
 import { CHECKOUT_STEP_2, HOME } from '@/constants/routes'
 import { useFormikContext } from 'formik'
 import { displayMoney, displayActionMessage } from '@/helpers/utils'
@@ -23,12 +28,13 @@ const Total = ({ isInternational, subtotal }) => {
     history.push(CHECKOUT_STEP_2)
   }
 
-  const { basket, checkout, auth } = useSelector((state) => ({
+  const { basket, checkout, auth, isOrdering } = useSelector((state) => ({
     basket: state.basket,
     checkout: state.checkout,
     auth: state.auth,
     isOrdering: state.app.isOrdering,
   }))
+  console.log(isOrdering)
   const onConfirm = () => {
     // console.log(basket, checkout, shipping, payment, subtotal)
     const { selectedSize, quantity, id, name, brand } = basket[0]
@@ -70,9 +76,16 @@ const Total = ({ isInternational, subtotal }) => {
           <ArrowLeftOutlined />
           &nbsp; Go Back
         </button>
-        <button className="button" onClick={() => onConfirm()} type="button">
+        <button
+          className="button"
+          onClick={() => onConfirm()}
+          disabled={isOrdering}
+          type="button"
+        >
           <CheckOutlined />
-          &nbsp; Confirm
+          {isOrdering ? ` Confirming` : 'Confirm'}
+          &nbsp;
+          {isOrdering ? <LoadingOutlined /> : null}
         </button>
       </div>
     </>
