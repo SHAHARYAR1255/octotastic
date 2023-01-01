@@ -4,7 +4,7 @@ import { displayActionMessage } from '@/helpers/utils'
 import { call, put, select } from 'redux-saga/effects'
 import { history } from '@/routers/AppRouter'
 import firebase from '@/services/firebase'
-import { setLoading, setRequestStatus } from '../actions/miscActions'
+import { setLoading, setOrdering } from '../actions/miscActions'
 import { updateProfileSuccess } from '../actions/profileActions'
 import { HOME } from '@/constants/routes'
 import { clearBasket } from '@/redux/actions/basketActions'
@@ -40,7 +40,8 @@ function* orderSaga({ type, payload }) {
     case ORDER: {
       try {
         console.log('ORDER SAGA');
-        yield put(setLoading(true))
+        yield put(setLoading(true));
+        yield put(setOrdering(true));
         yield call(firebase.order, payload)
         // yield call(firebase.updateEmail, payload.password, payload.newEmail);
         yield call(
@@ -50,6 +51,7 @@ function* orderSaga({ type, payload }) {
         )
         yield put(setLoading(false))
         yield put(orderSuccess(payload))
+        yield put(setOrdering(false));
         // yield call(history.push, '/profile');
         yield put(clearBasket())
         yield put(resetFilter())

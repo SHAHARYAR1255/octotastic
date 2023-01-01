@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom'
 import { setPaymentDetails } from '@/redux/actions/checkoutActions'
 import { order } from '@/redux/actions/orderActions'
 import { v4 as uuid } from 'uuid'
+import { setOrdering } from '@/redux/actions/miscActions'
 
 const Total = ({ isInternational, subtotal }) => {
   const { values } = useFormikContext()
@@ -26,6 +27,7 @@ const Total = ({ isInternational, subtotal }) => {
     basket: state.basket,
     checkout: state.checkout,
     auth: state.auth,
+    isOrdering: state.app.isOrdering,
   }))
   const onConfirm = () => {
     // console.log(basket, checkout, shipping, payment, subtotal)
