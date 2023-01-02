@@ -142,7 +142,7 @@ function* authSaga({ type, payload }) {
     }
     case ON_AUTHSTATE_SUCCESS: {
       const snapshot = yield call(firebase.getUser, payload.uid);
-
+      console.log(snapshot.data(), 'data sp');
       if (snapshot.data()) { // if user exists in database
         const user = snapshot.data();
 
