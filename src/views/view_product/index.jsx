@@ -31,10 +31,11 @@ const ViewProduct = () => {
     isLoading: isLoadingFeatured,
     error: errorFeatured,
   } = useRecommendedProducts(6)
+  console.log(error, 'error')
   const colorOverlay = useRef(null)
 
   useEffect(() => {
-    setSelectedImage(product?.image);
+    setSelectedImage(product?.image)
   }, [product])
 
   const onSelectedSizeChange = (newValue) => {
@@ -61,10 +62,10 @@ const ViewProduct = () => {
     } else {
       displayActionMessage('Select the size!', 'info')
     }
-    return;
+    return
   }
   const handleAddToBasket = () => {
-    validateAdd();
+    validateAdd()
   }
 
   return (
