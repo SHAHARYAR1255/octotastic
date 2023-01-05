@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-// import { persistReducer, persistStore } from 'redux-persist'
+import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from '../reducers'
@@ -13,19 +13,19 @@ const authPersistConfig = {
   storage,
   whitelist: ['auth', 'profile', 'basket', 'checkout', 'orders'],
 }
-// const persistedReducer = persistReducer(authPersistConfig, rootReducer)
+const persistedReducer = persistReducer(authPersistConfig, rootedReducer)
 
 export default () => {
   const store = configureStore({
-    reducer: rootedReducer,
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false,
         immutableStateInvariant: false,
       }).concat(sagaMiddleware),
   })
-  // const persistor = persistStore(store)
+  const persistor = persistStore(store)
   sagaMiddleware.run(rootSaga)
-  // return { store, persistor }
-  return { store }
+  return { store, persistor }
+  // return { store }
 }
