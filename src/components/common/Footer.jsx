@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer>
       <Link to="/">
-        <h2 className="footer__h2">OCTOTASTIC</h2>
+        <h2 className="footer__h2">GlowGauze</h2>
       </Link>
 
       <ul className="permalinks">
@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
       <div className="footer__copyright">
         <small>
-          Copyright &copy; 2019 -2022 Octotastic, Inc. All rights reserved.
+          Copyright &copy; 2019 -2022 GlowGauze, Inc. All rights reserved.
         </small>
       </div>
     </footer>

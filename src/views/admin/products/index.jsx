@@ -10,7 +10,7 @@ import { ProductsNavbar } from '../components';
 import ProductsTable from '../components/ProductsTable';
 
 const Products = () => {
-  useDocumentTitle('Product List | Octotastic Admin');
+  useDocumentTitle('Product List | GlowGauze Admin');
   useScrollTop();
 
   const store = useSelector((state) => ({

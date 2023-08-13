@@ -1,31 +1,38 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
-import { MessageDisplay } from '@/components/common';
-import { ProductShowcaseGrid } from '@/components/product';
-import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
+import { ArrowRightOutlined } from '@ant-design/icons'
+import { MessageDisplay } from '@/components/common'
+import { ProductShowcaseGrid } from '@/components/product'
 import {
-  useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
-} from '@/hooks';
-import bannerImg from '@/images/banner-girl.png';
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+  FEATURED_PRODUCTS,
+  RECOMMENDED_PRODUCTS,
+  SHOP,
+} from '@/constants/routes'
+import {
+  useDocumentTitle,
+  useFeaturedProducts,
+  useRecommendedProducts,
+  useScrollTop,
+} from '@/hooks'
+import bannerImg from '@/images/banner-girl.png'
+import React from 'react'
+import { Link } from 'react-router-dom'
+// import { motion } from 'framer-motion'
 
 const Home = () => {
-  useDocumentTitle('Octotastic | Home');
-  useScrollTop();
+  useDocumentTitle('GlowGauze | Home')
+  useScrollTop()
 
   const {
     featuredProducts,
     fetchFeaturedProducts,
     isLoading: isLoadingFeatured,
-    error: errorFeatured
-  } = useFeaturedProducts(6);
+    error: errorFeatured,
+  } = useFeaturedProducts(6)
   const {
     recommendedProducts,
     fetchRecommendedProducts,
     isLoading: isLoadingRecommended,
-    error: errorRecommended
-  } = useRecommendedProducts(6);
+    error: errorRecommended,
+  } = useRecommendedProducts(6)
 
   return (
     <main className="content">
@@ -38,8 +45,9 @@ const Home = () => {
               <strong>Clarity</strong>
             </h1>
             <p>
-              Buying eyewear should leave you happy and good-looking, with money in your pocket.
-              Glasses, sunglasses, and contacts—we’ve got your eyes covered.
+              Buying eyewear should leave you happy and good-looking, with money
+              in your pocket. Glasses, sunglasses, and contacts—we’ve got your
+              eyes covered.
             </p>
             <br />
             <Link to={SHOP} className="button">
@@ -47,14 +55,21 @@ const Home = () => {
               <ArrowRightOutlined />
             </Link>
           </div>
-          <div className="banner-img"><img src={bannerImg} alt="" /></div>
+          {/* <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            duration={2}
+            className="banner-img"
+          >
+            <img src={bannerImg} alt="" />
+          </motion.div> */}
         </div>
         <div className="display">
           <div className="display-header">
             <h1>Featured Products</h1>
             <Link to={FEATURED_PRODUCTS}>See All</Link>
           </div>
-          {(errorFeatured && !isLoadingFeatured) ? (
+          {errorFeatured && !isLoadingFeatured ? (
             <MessageDisplay
               message={errorFeatured}
               action={fetchFeaturedProducts}
@@ -72,7 +87,7 @@ const Home = () => {
             <h1>Recommended Products</h1>
             <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
           </div>
-          {(errorRecommended && !isLoadingRecommended) ? (
+          {errorRecommended && !isLoadingRecommended ? (
             <MessageDisplay
               message={errorRecommended}
               action={fetchRecommendedProducts}
@@ -87,7 +102,7 @@ const Home = () => {
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -31,7 +31,7 @@ const FormSchema = Yup.object().shape({
 });
 
 const EditProfile = () => {
-  useDocumentTitle('Edit Account | Octotastic');
+  useDocumentTitle('Edit Account | GlowGauze');
   useScrollTop();
 
   const modal = useModal();

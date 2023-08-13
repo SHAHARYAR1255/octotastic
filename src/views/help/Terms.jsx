@@ -2,7 +2,7 @@ import React from 'react'
 import { useDocumentTitle, useScrollTop } from '@/hooks';
 
 const Terms = () => {
-  useDocumentTitle('Terms & Conditions | Octotastic')
+  useDocumentTitle('Terms & Conditions | GlowGauze')
   useScrollTop()
 
   return (
@@ -83,7 +83,7 @@ const Terms = () => {
       </p>
       <h2>Contact us :</h2>
       <h4>Email </h4>
-      <p>info@octotastic.com</p>
+      <p>info@GlowGauze.com</p>
       <h4>Phone </h4>
       <p>(021) 46465664</p>
       <h4>WhatsApp</h4>

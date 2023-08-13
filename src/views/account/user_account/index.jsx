@@ -17,7 +17,7 @@ const Loader = () => (
 
 const UserAccount = () => {
   useScrollTop();
-  useDocumentTitle('My Account | Octotastic');
+  useDocumentTitle('My Account | GlowGauze');
 
   return (
     <UserTab>

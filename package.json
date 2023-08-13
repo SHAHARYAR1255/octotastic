@@ -2,7 +2,7 @@
   "name": "ecommerce-react",
   "version": "1.2.0",
   "main": "index.js",
-  "author": "Julius Guevarra",
+  "author": " ",
   "keywords": [
     "react-webpack",
     "boilerplate",
@@ -55,6 +55,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@reduxjs/toolkit": "^1.9.1",
+    "aws-amplify": "^5.3.5",
     "firebase": "^8.4.3",
     "formik": "^2.2.6",
     "history": "^4.10.0",

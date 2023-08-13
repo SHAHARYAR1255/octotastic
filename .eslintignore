@@ -1,2 +1,3 @@
 /webpack/
 /*.js
+amplify-codegen-temp\models

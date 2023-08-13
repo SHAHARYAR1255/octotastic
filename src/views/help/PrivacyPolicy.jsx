@@ -1,11 +1,14 @@
 import React from 'react'
 import { useDocumentTitle, useScrollTop } from '@/hooks'
+// import { motion, useScroll } from 'framer-motion'
 
 function PrivacyPolicy() {
-  useDocumentTitle('Privacy Policy | Octotastic')
+  useDocumentTitle('Privacy Policy | GlowGauze')
   useScrollTop()
+  // const { scrollYProgress } = useScroll()
   return (
-    <div>
+    // <motion.div style={{ scaleX: scrollYProgress }}>
+    <>
       <h1>PRIVACY POLICY</h1>
       <p>
         FUROR believes that its core responsibility is to ensure the privacy of
@@ -51,7 +54,7 @@ function PrivacyPolicy() {
       <h3>Contacting us</h3>
       <p>
         If you have any queries or concerns regarding this Privacy Policy,
-        please contact us at info@octotastic.com
+        please contact us at info@GlowGauze.com
       </p>
       <h3>Cookies</h3>
       <p>
@@ -61,7 +64,7 @@ function PrivacyPolicy() {
         computer’s operating system and platform, IP address, your browsing
         timing, your area’s location and your browsing patterns.
       </p>
-    </div>
+      </>
   )
 }
 

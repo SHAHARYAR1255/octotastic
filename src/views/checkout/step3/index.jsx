@@ -31,7 +31,7 @@ const FormSchema = Yup.object().shape({
 
 const Payment = ({ shipping, payment, subtotal }) => {
   console.log(subtotal, 'subtotal');
-  useDocumentTitle('Check Out Final Step | Octotastic');
+  useDocumentTitle('Check Out Final Step | GlowGauze');
   useScrollTop();
 
   const initFormikValues = {

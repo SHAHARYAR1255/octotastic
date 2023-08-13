@@ -53,7 +53,14 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
               <Skeleton width="100%" height="90%" />
             )}
           </div>
-          <div className="product-details">
+          {/* <motion.div
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 270, 270, 0],
+              borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+            }}
+            className="product-details"
+          > */}
             <h5 className="product-card-name text-overflow-ellipsis margin-auto">
               {product.name || <Skeleton width={80} />}
             </h5>
@@ -67,7 +74,7 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
                 <Skeleton width={40} />
               )}
             </h4>
-          </div>
+          {/* </motion.div> */}
         </div>
         {product.id && (
           <button
